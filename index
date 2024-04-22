@@ -4,53 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samsung</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <button>Contact Us</button>
-  </nav>
-</header>
-
-<section id="home">
-  <h1>Welcome to Samsung</h1>
-  <p>Your go-to brand for innovative and high-quality electronics.</p>
-</section>
-
-<section id="products">
-  <div class="product">
-    <img src="samsung-galaxy.jpg" alt="Samsung Galaxy">
-    <h2>Samsung Galaxy</h2>
-    <p>The Samsung Galaxy series offers cutting-edge smartphones with top-notch features.</p>
-  </div>
-  
-  <div class="product">
-    <img src="samsung-tv.jpg" alt="Samsung TV">
-    <h2>Samsung TV</h2>
-    <p>Elevate your viewing experience with Samsung's range of smart TVs.</p>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2021 Samsung. All Rights Reserved.</p>
-  <form>
-    <h3>Contact Us</h3>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+<style>
 * {
   box-sizing: border-box;
 }
@@ -132,3 +86,74 @@ button {
     margin: 5px 0;
   }
 }
+
+.active {
+  display: flex;
+  flex-direction: column;
+}
+
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <button>Contact Us</button>
+  </nav>
+</header>
+
+<section id="home">
+  <h1>Welcome to Samsung</h1>
+  <p>Your go-to brand for innovative and high-quality electronics.</p>
+</section>
+
+<section id="products">
+  <div class="product">
+    <img src="samsung-galaxy.jpg" alt="Samsung Galaxy">
+    <h2>Samsung Galaxy</h2>
+    <p>The Samsung Galaxy series offers cutting-edge smartphones with top-notch features.</p>
+  </div>
+  
+  <div class="product">
+    <img src="samsung-tv.jpg" alt="Samsung TV">
+    <h2>Samsung TV</h2>
+    <p>Elevate your viewing experience with Samsung's range of smart TVs.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2021 Samsung. All Rights Reserved.</p>
+  <form>
+    <h3>Contact Us</h3>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</footer>
+
+<script>
+const nav = document.querySelector('nav');
+const navLinks = document.querySelectorAll('nav a');
+
+function toggleMenu() {
+  nav.classList.toggle('active');
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('click', toggleMenu);
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && nav.classList.contains('active')) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>
