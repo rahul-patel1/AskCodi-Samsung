@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samsung</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <button>Contact Us</button>
+  </nav>
+</header>
+
+<section id="home">
+  <h1>Welcome to Samsung</h1>
+  <p>Your go-to brand for innovative and high-quality electronics.</p>
+</section>
+
+<section id="products">
+  <div class="product">
+    <img src="samsung-galaxy.jpg" alt="Samsung Galaxy">
+    <h2>Samsung Galaxy</h2>
+    <p>The Samsung Galaxy series offers cutting-edge smartphones with top-notch features.</p>
+  </div>
+  
+  <div class="product">
+    <img src="samsung-tv.jpg" alt="Samsung TV">
+    <h2>Samsung TV</h2>
+    <p>Elevate your viewing experience with Samsung's range of smart TVs.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2021 Samsung. All Rights Reserved.</p>
+  <form>
+    <h3>Contact Us</h3>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a, nav button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+section {
+  padding: 20px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  margin-right: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+form {
+  display: grid;
+  grid-gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, textarea {
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav a, nav button {
+    margin: 5px 0;
+  }
+}
